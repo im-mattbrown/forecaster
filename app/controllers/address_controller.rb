@@ -1,4 +1,4 @@
 class AddressController < ApplicationController
-  def idex
+  def index
   end
 end
