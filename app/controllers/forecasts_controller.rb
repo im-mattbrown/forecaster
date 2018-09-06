@@ -1,4 +1,4 @@
-class ForecastController < ApplicationController
+class ForecastsController < ApplicationController
   def index
   end
 
