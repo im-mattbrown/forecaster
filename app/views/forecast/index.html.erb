@@ -3,25 +3,9 @@
 
 <%= form_with scope: :address, local: true do |form| %>
   <p>
-    <%= form.label :street %><br>
-    <%= form.text_field :title %>
+    <%= form.label :address %><br>
+    <%= form.text_field :address, placeholder: "1725 Slough Avenue, Scranton, PA 18503"  %>
   </p>
-
-  <p>
-    <%= form.label :city %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.label :state %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.label :zip %><br>
-    <%= form.text_area :text %>
-  </p>
-
   <p>
     <%= form.submit :get_weather %>
   </p>
