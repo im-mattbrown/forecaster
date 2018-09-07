@@ -14,6 +14,6 @@ class ForecastController < ApplicationController
     @forecast = Forecast.new(params[:forecast])
 
     @forecast.save
-    redirect_to action: "index"
+    render template: "forecast/show"
   end
 end
