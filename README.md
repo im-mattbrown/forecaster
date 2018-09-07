@@ -1,6 +1,6 @@
 # Forecaster
 
-Clone this repo with 'git clone https://github.com/mattericbrown/forecaster.git'
+Clone this repo with 'code(git clone https://github.com/mattericbrown/forecaster.git)'
 
 To access the forecast project navigate to folder 'cd forecaster' and run 'ruby forecaster.rb' in the terminal
 
