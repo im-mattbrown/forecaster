@@ -12,19 +12,19 @@ lat = result.first.coordinates[0]
 
 lon = result.first.coordinates[1]
 
-url = 'https://api.darksky.net/forecast/0a08b825121b4fa5cb88137efedb0b87/'+lat.to_s+','+lon.to_s
+url = "https://api.darksky.net/forecast/0a08b825121b4fa5cb88137efedb0b87/#{lat},#{lon}"
 
 buffer = open(url).read
 
 parsed = JSON.parse(buffer)
 
-timezone = parsed["timezone"].split('/')[1].split('_').join(' ')
+location = address.split(',')[1]
 currently = parsed["currently"]["summary"].downcase
 hourly = parsed["hourly"]["summary"].downcase
 degrees = parsed["currently"]["temperature"]
-extended = parsed["daily"]["summary"]
+extended = parsed["daily"]["summary"].downcase
 
-puts "\n In #{timezone}, it is currently #{currently} and #{degrees} degrees. The forecast for the rest of the day will be #{hourly} The extended forecast will be #{extended}"
+puts "\n In #{location}, it is currently #{currently} and #{degrees} degrees. The forecast for the rest of the day will be #{hourly} The extended forecast will be #{extended}"
 
 if currently == "clear"
   puts  %q(
