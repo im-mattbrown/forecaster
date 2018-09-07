@@ -18,12 +18,34 @@ buffer = open(url).read
 
 parsed = JSON.parse(buffer)
 
-timezone = parsed["timezone"]
-currently = parsed["currently"]["summary"]
-hourly = parsed["hourly"]["summary"]
+timezone = parsed["timezone"].split('/')[1].split('_').join(' ')
+currently = parsed["currently"]["summary"].downcase
+hourly = parsed["hourly"]["summary"].downcase
 degrees = parsed["currently"]["temperature"]
+extended = parsed["daily"]["summary"]
 
-puts "In #{timezone}, it is currently #{currently} and #{degrees} degrees. The rest of the day will be #{hourly}"
+puts "\n In #{timezone}, it is currently #{currently} and #{degrees} degrees. The forecast for the rest of the day will be #{hourly} The extended forecast will be #{extended}"
 
-
+if currently == "clear"
+  puts  %q(
+           ;   :   ;
+        .   \_,!,_/   ,
+         `.,'     `.,'
+          /         \
+     ~ -- :         : -- ~
+          \         /
+         ,'`._   _.'`.
+        '   / `!` \   `
+           ;   :   ;
+         )
+else currently == "overcast" || "mostly cloudy"
+  puts %q(
+          .-~~~-.
+  .- ~ ~-(       )_ _
+ /                     ~ -.
+|                           \
+ \                         .'
+  ~- . _____________ . -~
+  )
+end
 
