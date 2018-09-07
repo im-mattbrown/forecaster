@@ -4,7 +4,7 @@ Clone this repo with `git clone https://github.com/mattericbrown/forecaster.git`
 
 To access the forecast project navigate to folder `cd forecaster` and run `ruby forecaster.rb` in the terminal
 
-If provided a valid address to the script prompt, the program will return a current and extended forcast for the area.
+If provided a valid address to the script prompt, the program will return a current and extended forcast for the area. For instance try `2206 Plaza Dr, Rocklin, CA 95765`
 
 ## Process
 

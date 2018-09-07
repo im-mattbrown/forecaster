@@ -3,7 +3,7 @@ require 'geocoder'
 require 'open-uri'
 require 'json'
 
-puts "What is your address? EX: 1725 Slough Avenue, Scranton, PA, 18505"
+puts "What is your address? Example format = 1725 Slough Avenue, Scranton, PA, 18505"
 address = gets
 
 result = Geocoder.search(address)
